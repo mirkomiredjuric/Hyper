@@ -52,6 +52,8 @@ public class EmployeeService {
         entity.setName( dto.getName() );
         if (dto.getTeamId() != null) {
             entity.setTeam( teamRepository.findOrThrowException( dto.getTeamId() ) );
+        }else{
+            entity.setTeam( null );
         }
 
         return employeeRepository.save( entity ).getId();

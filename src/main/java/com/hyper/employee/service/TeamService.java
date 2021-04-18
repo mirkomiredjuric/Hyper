@@ -46,6 +46,8 @@ public class TeamService {
         entity.setName( dto.getName() );
         if (dto.getTeamLeadId() != null) {
             entity.setTeamLead( employeeRepository.findOrThrowException( dto.getTeamLeadId() ) );
+        }else{
+            entity.setTeamLead( null );
         }
 
         return teamRepository.save( entity ).getId();
