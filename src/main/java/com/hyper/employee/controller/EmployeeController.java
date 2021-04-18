@@ -1,7 +1,9 @@
 package com.hyper.employee.controller;
 
+import com.hyper.employee.entity.Employee;
 import com.hyper.employee.service.EmployeeService;
 import com.hyper.employee.service.dto.EmployeeDto;
+import com.hyper.employee.service.dto.EmployeeResponse;
 import com.hyper.employee.service.dto.SaveEmployeeDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +26,12 @@ public class EmployeeController {
     public List<EmployeeDto> getAll() {
         LOGGER.log( Level.INFO, "Getting all employees." );
         return employeeService.getAll();
+    }
+
+    @GetMapping(value = { "/allEmp" })
+    public List<EmployeeResponse> getAllEmployees() {
+        LOGGER.log( Level.INFO, "Getting all employees." );
+        return employeeService.findAllEmployees();
     }
 
     @GetMapping(value = { "/{id}", "/get/{id}" })

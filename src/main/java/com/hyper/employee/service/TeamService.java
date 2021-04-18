@@ -5,9 +5,11 @@ import com.hyper.employee.dao.TeamRepository;
 import com.hyper.employee.entity.Team;
 import com.hyper.employee.service.dto.SaveTeamDto;
 import com.hyper.employee.service.dto.TeamDto;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TeamService {
 
     private final TeamRepository teamRepository;

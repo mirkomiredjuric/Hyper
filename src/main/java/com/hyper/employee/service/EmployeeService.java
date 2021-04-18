@@ -4,10 +4,13 @@ import com.hyper.employee.dao.EmployeeRepository;
 import com.hyper.employee.dao.TeamRepository;
 import com.hyper.employee.entity.Employee;
 import com.hyper.employee.service.dto.EmployeeDto;
+import com.hyper.employee.service.dto.EmployeeResponse;
 import com.hyper.employee.service.dto.SaveEmployeeDto;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
@@ -16,6 +19,11 @@ public class EmployeeService {
     public EmployeeService(EmployeeRepository employeeRepository, TeamRepository teamRepository) {
         this.employeeRepository = employeeRepository;
         this.teamRepository = teamRepository;
+    }
+
+    public List<EmployeeResponse> findAllEmployees(){
+        List<EmployeeResponse> employees = employeeRepository.findAllEmployees();
+        return employees;
     }
 
     public List<EmployeeDto> getAll() {
