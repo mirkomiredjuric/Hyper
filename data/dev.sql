@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employee` (
-                            `id` bigint NOT NULL,
+                            `id` bigint NOT NULL AUTO_INCREMENT,
                             `name` varchar(50) NOT NULL,
                             `teamid` bigint DEFAULT NULL,
                             PRIMARY KEY (`id`),
@@ -50,7 +50,7 @@ DROP TABLE IF EXISTS `team`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `team` (
-                        `id` bigint NOT NULL,
+                        `id` bigint NOT NULL AUTO_INCREMENT ,
                         `name` varchar(50) NOT NULL,
                         `teamLeadId` bigint DEFAULT NULL,
                         PRIMARY KEY (`id`),
